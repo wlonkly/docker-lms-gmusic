@@ -4,8 +4,11 @@ set -x
 set -e
 
 # Install Dependencies
-apt-get update -qq
-apt-get install -qy python2.7 libpython2.7-dev python-pip libffi-dev make cpanminus libssl-dev
+apt-get update
+apt-get install -qy python2.7 libpython2.7-dev python-pip libffi-dev \
+                    make cpanminus libssl-dev python-lxml
+
+pip install --upgrade setuptools
 
 pip install cryptography
 pip install gmusicapi==10.0.1
